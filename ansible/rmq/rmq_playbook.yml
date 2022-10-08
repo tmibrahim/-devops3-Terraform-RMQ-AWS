@@ -29,5 +29,5 @@
         - name: Add initial user
           become: yes
           shell: |
-            rabbitmqctl add_user ibrahim Welcome1
-            rabbitmqctl set_user_tags ibrahim administrator
+            rabbitmqctl add_user username Password
+            rabbitmqctl set_user_tags username administrator
