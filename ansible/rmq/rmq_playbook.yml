@@ -1,7 +1,9 @@
 ---
     - name: Configure Jenkins Job
-      host: tag_group_rmq
+      hosts: tag_group_rmq
+
       tasks:
+
         - name: Install RMQ
           become: yes
           shell: |
@@ -15,7 +17,7 @@
             EOF
             apt-get update -y
             apt-get install rabbitmq-server -y --fix-missing
-
+        
         - name: Start RMQ
           become: yes
           shell: service rabbitmq-server start
@@ -27,8 +29,5 @@
         - name: Add initial user
           become: yes
           shell: |
-            rabbitmqctl add_user ibrahim Welcome1
-            rabbitmqctl set_user_tags ibrahim administrator
-
-
-
+            rabbitmqctl add_user sparlor Welcome1
+            rabbitmqctl set_user_tags sparlor administrator
